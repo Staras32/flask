@@ -4,4 +4,5 @@ werkzeug==2.0.3  # Nurodykite suderinamą versiją
 python-dotenv
 requests
 pandas
+TA-Lib
 
