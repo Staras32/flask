@@ -3,4 +3,4 @@ gunicorn==20.1.0
 werkzeug==2.0.3  # Nurodykite suderinamą versiją
 python-dotenv
 requests
-pip install -r requirements.txt
+
