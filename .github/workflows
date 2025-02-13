@@ -2,32 +2,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Pirmas žingsnis: patraukite jūsų repo
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Antras žingsnis: įdiekite TA-Lib priklausomybę
       - name: Install TA-Lib dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libta-lib0-dev
-          
-      # Trečias žingsnis: sukurkite virtualų aplanką
+
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12'  # Naudokite jūsų norimą Python versiją
+          python-version: '3.12'
 
-      # Ketvirtas žingsnis: įdiekite priklausomybes
       - name: Install dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-
-      # Penktas žingsnis: vykdykite testus (jei reikia)
-      - name: Run tests
-        run: |
-          source venv/bin/activate
-          pytest  # Jei naudojate pytest testavimui
 
